@@ -1,6 +1,15 @@
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:/Applications/Sketch.app/Contents/Resources/sketchtool/bin
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export SLS_DEBUG=true
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 source ~/.zplug/init.zsh
+alias python="python3"
 
 #autoload -Uz compinit && compinit
 
@@ -17,6 +26,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 setopt auto_cd
 setopt share_history
+
 
 # ダブルクォーテーションで囲うと良い
 zplug "zsh-users/zsh-history-substring-search"
@@ -137,15 +147,23 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+# Homebrew
+export PATH="/usr/local/bin:$PATH"
+
 eval "$(rbenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 eval "$(direnv hook zsh)"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+export PYENV_ROOT=/usr/local/var/pyenv
 
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

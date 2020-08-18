@@ -1,7 +1,8 @@
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.zplug ~/.zplug
-ln -sf ~/dotfiles/.vim ~/.vim
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
+#!/bin/bash -e
 
+ln -sf ./.zshrc ~/.zshrc
+ln -sf ./.zplug ~/.zplug
+ln -sf ./.vim ~/.vim
+ln -sf ./.vimrc ~/.vimrc
+ln -sf ./.bash_profile ~/.bash_profile
+ln -sf ./.bashrc ~/.bashrc

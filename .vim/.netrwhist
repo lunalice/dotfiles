@@ -1,4 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/yamashitasatoshi/.vim/bundle/Vundle.vim'
-let g:netrw_dirhist_2='/Users/yamashitasatoshi/.bash_sessions'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/yamashitasatoshi/.rbenv/versions/2.4.6/lib/ruby/gems/2.4.0/gems/sentry-raven-2.9.0'
