@@ -1,5 +1,4 @@
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:/Applications/Sketch.app/Contents/Resources/sketchtool/bin
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -7,6 +6,11 @@ export SLS_DEBUG=true
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
 
 source ~/.zplug/init.zsh
 alias python="python3"
@@ -167,3 +171,10 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+
+
+
